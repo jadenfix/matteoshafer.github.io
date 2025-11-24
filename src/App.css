@@ -1,0 +1,169 @@
+/* Global Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background: #111;  /* Dark background */
+  color: #e0e0e0;
+  scroll-behavior: smooth;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #111;
+}
+
+/* Combined Header (Logo, Profile Links, Navbar) */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #1a1a1a;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.8);
+  z-index: 1100;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Logo Section */
+.logo {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #6366f1; /* You can change this to a pink if desired */
+  margin-bottom: 1rem;
+}
+
+.header h1 {
+  margin: 0.5rem 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #e0e0e0;
+}
+
+.header h2 {
+  margin: 0.25rem 0 1rem;
+  font-size: 1.5rem;
+  color: #aaa;
+}
+
+/* Profile Links */
+.profile-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.profile-links a {
+  text-decoration: none;
+  color: #aaa;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.profile-links a:hover {
+  color: #ff49db;  /* Vibrant pink on hover */
+  transform: scale(1.1);
+}
+
+.profile-icon {
+  font-size: 1.8rem;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  background: #1a1a1a;
+  border-top: 1px solid #333;
+  padding: 0.75rem 0; /* Increased padding for bigger buttons */
+  /* No additional position here since header covers it */
+}
+
+.nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #aaa;
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+
+.menu li a:hover,
+.menu li a:focus,
+.menu li.active a {
+  background: #ff49db; /* Bright pink for hover */
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* Main Content */
+.content {
+  margin-top: 320px;  /* Adjust this value to match the total height of your fixed header */
+  flex: 1;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+  background: #111;
+}
+
+/* Section Styles */
+.section {
+  margin-bottom: 2rem;
+}
+
+.section h2 {
+  margin-bottom: 0.75rem;
+  border-bottom: 2px solid #333;
+  padding-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+/* Footer */
+.footer {
+  background: #1a1a1a;
+  border-top: 1px solid #333;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    align-items: center;
+  }
+  .content {
+    margin-top: 400px;  /* Increase offset for smaller screens if header stacks */
+    padding: 1rem;
+  }
+}
