@@ -1,0 +1,7 @@
+git pull
+git rm src/index.css                    # remove the bad one
+echo "body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }" > src/index.css
+echo "code { font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace; }" >> src/index.css
+git add src/index.css
+git commit -m "fix: properly add src/index.css as text file"
+git push
