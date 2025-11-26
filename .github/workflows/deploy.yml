@@ -13,6 +13,12 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    # ←←← ADD THESE 4 LINES BELOW ←←←
+    environment:
+      name: github-pages
+      url: https://matteoshafer.github.io
+    # ←←← END OF ADDITION ←←←
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -29,11 +35,10 @@ jobs:
       - name: Build
         run: npm run build
 
-      # This line was wrong → changed from ./docs to ./build
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./build
+          path: ./build   # now correct
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
