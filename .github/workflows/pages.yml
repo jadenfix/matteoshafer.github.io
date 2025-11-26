@@ -2,8 +2,7 @@ name: Build and deploy Jekyll site
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   build:
@@ -11,10 +10,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build Jekyll site
+      - name: Build site
         uses: actions/jekyll-build-pages@v1
         with:
-          source: .          # <- build from repo root
+          source: .       # set to '.' if your site is in repo root
           destination: ./_site
-          future: false
+          token: ${{ secrets.GITHUB_TOKEN }}
           verbose: true
+
+      - name: Deploy to gh-pages
+        if: success()
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages
