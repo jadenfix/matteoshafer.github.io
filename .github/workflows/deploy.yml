@@ -23,16 +23,17 @@ jobs:
           node-version: 20
           cache: npm
 
-      - name: Install
+      - name: Install dependencies
         run: npm ci
 
       - name: Build
         run: npm run build
 
+      # This line was wrong → changed from ./docs to ./build
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./docs  
+          path: ./build
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
