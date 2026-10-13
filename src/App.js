@@ -12,6 +12,7 @@ import BayesianCNNPage from "./pages/BayesianCNNPage";
 import "./App.css";
 
 function Header() {
+  const [avatarFailed, setAvatarFailed] = React.useState(false);
   return (
     <header className="header">
       <motion.div 
@@ -20,11 +21,14 @@ function Header() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <img
+        {avatarFailed ? (
+          <div className="avatar avatar-fallback" role="img" aria-label="Jaden Fix initials">JF</div>
+        ) : <img
           src="https://avatars.githubusercontent.com/u/163031992?v=4"
           alt="Jaden Fix Avatar"
           className="avatar"
-        />
+          onError={() => setAvatarFailed(true)}
+        />}
         <h1>Jaden Fix</h1>
         <h2>Data, AI, and Solutions Specialist</h2>
       </motion.div>

@@ -167,3 +167,65 @@ body, html {
     padding: 1rem;
   }
 }
+/* Keep padded research panels and code samples within the viewport. */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+.app-container .content {
+  width: 100%;
+  min-width: 0;
+}
+.content .page-container,
+.content .homepage-container,
+.page-container .section {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.content pre {
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+}
+@media (max-width: 768px) {
+  .app-container .header {
+    position: static;
+  }
+  .app-container .content {
+    margin-top: 0;
+  }
+  .app-container .menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .app-container .menu a {
+    padding: 0.65rem;
+  }
+  .header .avatar {
+    width: 72px;
+    height: 72px;
+  }
+  .header h1 {
+    font-size: 1.75rem;
+  }
+  .header h2 {
+    font-size: 1rem;
+  }
+  .page-container .section-title {
+    font-size: 1.5rem;
+  }
+  .content .page-container,
+  .page-container .section {
+    padding: 1rem;
+  }
+}
+
+.avatar-fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #29263c;
+  color: #fff;
+  font-size: 2rem;
+}
