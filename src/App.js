@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { HashRouter, Routes, Route, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope, FaCalendarAlt } from "react-icons/fa";
 
@@ -58,7 +58,7 @@ function Header() {
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="app-container">
         <Header />
         <main className="content">
@@ -75,7 +75,7 @@ function App() {
           <p>&copy; {new Date().getFullYear()} Jaden Fix. All rights reserved.</p>
         </footer>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
