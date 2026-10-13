@@ -1,0 +1,49 @@
+{
+  "source_commit": "26cb9cc0df063fad8988aa9410896cb250ac295c",
+  "source_tree": "09eeb86012f289c59119858f27640091736e1fdb",
+  "post_capture_attestation": "Only the excluded CI workflow gained an FFmpeg package-install step after capture. All 41 manifest-pinned runtime, content, capture-generator, and verifier inputs remain byte-identical to the captured source.",
+  "base_url": "http://127.0.0.1:4173/matteoshafer.github.io/",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "interaction": [
+    "archive index",
+    "predictive stochastic summary",
+    "NLP summary",
+    "stale-route recovery",
+    "archive index return"
+  ],
+  "media": {
+    "gif": {
+      "path": "artifacts/demo/portfolio-archive-demo.gif",
+      "bytes": 7962573,
+      "sha256": "347d8db9beb8b0bc1e099e086c377fbacebcbe52b8961051f3568fa679496a66",
+      "codec": "gif",
+      "width": 1120,
+      "height": 700,
+      "frames": 124,
+      "duration_seconds": 12.4
+    },
+    "mp4": {
+      "path": "artifacts/demo/portfolio-archive-demo.mp4",
+      "bytes": 1227321,
+      "sha256": "8caaf6798f1bc187a7e6cc3b55736280edc43eab2ad57aa148dd16844e8db1a7",
+      "codec": "h264",
+      "width": 1440,
+      "height": 900,
+      "frames": 309,
+      "duration_seconds": 12.36
+    },
+    "poster": {
+      "path": "artifacts/demo/portfolio-archive-poster.png",
+      "bytes": 287706,
+      "sha256": "67dd755e6be99ded5549c7297ef89b9b14c74db2e5053bcd7cf2c4adfd59d2dd",
+      "codec": "png",
+      "width": 1440,
+      "height": 900,
+      "frames": 1,
+      "duration_seconds": 0
+    }
+  }
+}

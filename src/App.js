@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Routes, Route, NavLink } from "react-router-dom";
+import { HashRouter, Routes, Route, NavLink, Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope, FaCalendarAlt } from "react-icons/fa";
 
@@ -10,6 +10,48 @@ import SolanaToolsPage from "./pages/SolanaToolsPage";
 import NLPPage from "./pages/NLPPage";
 import BayesianCNNPage from "./pages/BayesianCNNPage";
 import "./App.css";
+
+const routeTitles = {
+  "/": "Research portfolio archive",
+  "/masters-thesis": "Master's thesis",
+  "/predictive-stochastic": "Predictive stochastic modeling",
+  "/solana-tools": "Solana tools",
+  "/nlp": "NLP language model",
+  "/bayesian-cnn": "Bayesian CNN",
+};
+
+function RouteEffects() {
+  const { pathname } = useLocation();
+  const firstRoute = React.useRef(true);
+  const title = routeTitles[pathname] || "Page not found";
+
+  React.useEffect(() => {
+    document.title = `${title} · Jaden Fix`;
+    if (firstRoute.current) {
+      firstRoute.current = false;
+      return;
+    }
+    document.getElementById("research-content")?.focus();
+  }, [pathname, title]);
+
+  return <span className="sr-only" aria-live="polite">{title}</span>;
+}
+
+function NotFoundPage() {
+  const { pathname } = useLocation();
+  return (
+    <div className="page-container">
+      <section className="section not-found" aria-labelledby="not-found-title">
+        <p className="eyebrow">Route recovery</p>
+        <h2 id="not-found-title" className="section-title">This archive page does not exist</h2>
+        <p className="section-content">
+          The saved route <code>{pathname}</code> is not part of this historical portfolio. No project content was loaded.
+        </p>
+        <Link className="route-recovery" to="/">Return to the verified archive index</Link>
+      </section>
+    </div>
+  );
+}
 
 function Header() {
   const [avatarFailed, setAvatarFailed] = React.useState(false);
@@ -68,7 +110,11 @@ function App() {
     <HashRouter>
       <div className="app-container">
         <a className="skip-link" href="#research-content" onClick={(event) => { event.preventDefault(); document.getElementById("research-content")?.focus(); }}>Skip to content</a>
+        <RouteEffects />
         <Header />
+        <aside className="archive-notice" aria-label="Archive scope">
+          Historical project summaries only. Linked repositories, results, live services, and deployments are outside this archive's verification scope.
+        </aside>
         <main id="research-content" className="content" tabIndex={-1}>
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -77,6 +123,7 @@ function App() {
             <Route path="/solana-tools" element={<SolanaToolsPage />} />
             <Route path="/nlp" element={<NLPPage />} />
             <Route path="/bayesian-cnn" element={<BayesianCNNPage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>
         <footer className="footer">
