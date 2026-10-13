@@ -16,7 +16,7 @@ jobs:
     # ←←← ADD THESE 4 LINES BELOW ←←←
     environment:
       name: github-pages
-      url: https://matteoshafer.github.io
+      url: ${{ steps.deployment.outputs.page_url }}
     # ←←← END OF ADDITION ←←←
 
     steps:
@@ -41,4 +41,5 @@ jobs:
           path: ./build   # now correct
 
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
