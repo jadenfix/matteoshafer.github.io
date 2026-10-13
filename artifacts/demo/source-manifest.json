@@ -2,16 +2,14 @@
   "source_commit": "26cb9cc0df063fad8988aa9410896cb250ac295c",
   "source_tree": "09eeb86012f289c59119858f27640091736e1fdb",
   "scope": "Checked-in historical portfolio routes only; no external repository, result, live-service, or deployment verification.",
+  "excluded_non_runtime_paths": [
+    ".github/workflows/quality.yml"
+  ],
   "inputs": [
     {
       "path": ".github/workflows/deploy.yml",
       "git_blob": "2026233626e53d19a120fdd840da00416e3b7540",
       "sha256": "8bb8e41a4246ca999e8d3e95b3c012507e0f6100dafce68de003a9899960636a"
-    },
-    {
-      "path": ".github/workflows/quality.yml",
-      "git_blob": "ded68e1c7bbafb2afd1e1a7c9f95a178096c0253",
-      "sha256": "bd7f37287ed83e19ab64bc24df92d1660f30ea2f848d61a5ecd1113de122c496"
     },
     {
       "path": ".gitignore",

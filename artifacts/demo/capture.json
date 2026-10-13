@@ -1,6 +1,7 @@
 {
   "source_commit": "26cb9cc0df063fad8988aa9410896cb250ac295c",
   "source_tree": "09eeb86012f289c59119858f27640091736e1fdb",
+  "post_capture_attestation": "Only the excluded CI workflow gained an FFmpeg package-install step after capture. All 41 manifest-pinned runtime, content, capture-generator, and verifier inputs remain byte-identical to the captured source.",
   "base_url": "http://127.0.0.1:4173/matteoshafer.github.io/",
   "viewport": {
     "width": 1440,
