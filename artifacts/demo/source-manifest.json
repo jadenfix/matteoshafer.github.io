@@ -1,0 +1,217 @@
+{
+  "source_commit": "26cb9cc0df063fad8988aa9410896cb250ac295c",
+  "source_tree": "09eeb86012f289c59119858f27640091736e1fdb",
+  "scope": "Checked-in historical portfolio routes only; no external repository, result, live-service, or deployment verification.",
+  "inputs": [
+    {
+      "path": ".github/workflows/deploy.yml",
+      "git_blob": "2026233626e53d19a120fdd840da00416e3b7540",
+      "sha256": "8bb8e41a4246ca999e8d3e95b3c012507e0f6100dafce68de003a9899960636a"
+    },
+    {
+      "path": ".github/workflows/quality.yml",
+      "git_blob": "ded68e1c7bbafb2afd1e1a7c9f95a178096c0253",
+      "sha256": "bd7f37287ed83e19ab64bc24df92d1660f30ea2f848d61a5ecd1113de122c496"
+    },
+    {
+      "path": ".gitignore",
+      "git_blob": "389da0c4ebcd240aecca1334bf337b7865d715f2",
+      "sha256": "b6eee5f3b0ddc5c4a4d02de215ecce6165b4bdc3e6fe926e66b3abee3c76978e"
+    },
+    {
+      "path": "App.css",
+      "git_blob": "d2895120b775d7e20dd216298261fe78a1bd02a6",
+      "sha256": "f915ab4d6fb7863b402b386e7f96456834dce75c983175c75b8d364464d179bb"
+    },
+    {
+      "path": "App.js",
+      "git_blob": "652e9bed452f7c4462656dd3a4bd56eae00a38d6",
+      "sha256": "1d75191bc95ee0383be998f16f085d73a8b3c10ed3f832e22b2165cf7b476232"
+    },
+    {
+      "path": "App.test.js",
+      "git_blob": "1f03afeece5ac28064fa3c73a29215037465f789",
+      "sha256": "f7784693194b8657d1bf70c37ea70f4a2d694c4566ec41550a8e650eb600aaa4"
+    },
+    {
+      "path": "README.md",
+      "git_blob": "851611f3ef3f99d6b358483fdfb0670fc5e246e7",
+      "sha256": "798b6e4f2071dae5f633cf394df1551c2fe2d0baf0eaa13572e33905e4d35b11"
+    },
+    {
+      "path": "e2e/archive.spec.js",
+      "git_blob": "b5e8ef6ce46ef97c8866cbd8bded5eae01540949",
+      "sha256": "4b59086455e2a23e13c4873bb8b3df82c5edcf4f7cbe944a4204c72324c47368"
+    },
+    {
+      "path": "index.css",
+      "git_blob": "ec2585e8c0bb8188184ed1e0703c4c8f2a8419b0",
+      "sha256": "daf22c296c801d3d533083361cc59fbdc22e5bfe528aa4bad1973b54cc5448a4"
+    },
+    {
+      "path": "logo.svg",
+      "git_blob": "9dfc1c058cebbef8b891c5062be6f31033d7d186",
+      "sha256": "6000b0e9b0b05b3f112de04f0d039768a1db63588ff9b6ef7099dbd71632f383"
+    },
+    {
+      "path": "package-lock.json",
+      "git_blob": "321c9b395e83ae2d483d33270a7f4f3d5237fafe",
+      "sha256": "f7e871defe3f14b7ec5ae89ed89adbe5990d3c09c2a4b19d8d6aadea2b929506"
+    },
+    {
+      "path": "package.json",
+      "git_blob": "8a914aeddf31dc3eee82253362b0663eae0c0e71",
+      "sha256": "f8adc42bd2b222cd5708ecf18445da8923686dc41b22cb42b3dadb6476a62738"
+    },
+    {
+      "path": "playwright.config.js",
+      "git_blob": "af097e460659a271cdeba93d4a097a4f2217343f",
+      "sha256": "243194e5352cb216c2aab6bf7f18813a5249efdfaf48e4b6d7e8173e02f0503b"
+    },
+    {
+      "path": "public/archive/original-template.html",
+      "git_blob": "44e4402fecf95acb44a4a6f08b7b73069218e835",
+      "sha256": "ef8098aabb787cd8ff7523f3d08fc5c1e4b11a25f95f39d2ac5251c7db159830"
+    },
+    {
+      "path": "public/favicon.ico",
+      "git_blob": "a11777cc471a4344702741ab1c8a588998b1311a",
+      "sha256": "3d10f7da6c603178340081668c4ac5b3ae9743ca9a262ab0fcd312fbb9f48bdd"
+    },
+    {
+      "path": "public/index.html",
+      "git_blob": "923398c7d9fa2508f634bd5a86718c638d713173",
+      "sha256": "48516833d9dfc4da3eedf9cf16e29ac68c2ee39efe797d12ab094540623c7ee3"
+    },
+    {
+      "path": "public/logo192.png",
+      "git_blob": "fc44b0a3796c0e0a64c3d858ca038bd4570465d9",
+      "sha256": "c386396ec70db3608075b5fbfaac4ab1ccaa86ba05a68ab393ec551eb66c3e00"
+    },
+    {
+      "path": "public/logo512.png",
+      "git_blob": "a4e47a6545bc15971f8f63fba70e4013df88a664",
+      "sha256": "9ea4f4da7050c0cc408926f6a39c253624e9babb1d43c7977cd821445a60b461"
+    },
+    {
+      "path": "public/manifest.json",
+      "git_blob": "080d6c77ac21bb2ef88a6992b2b73ad93daaca92",
+      "sha256": "50b3d8c3903af3f78d871b94557ab14f4e39ca192eaca3d2cfa863c867279a14"
+    },
+    {
+      "path": "reportWebVitals.js",
+      "git_blob": "5253d3ad9e6be6690549cb255f5952337b02401d",
+      "sha256": "714851669856152806c289f9aac6240b414bbac50c60ee4f7e6247f31eac0c1c"
+    },
+    {
+      "path": "scripts/capture-demo.js",
+      "git_blob": "bf923f9b06ede9f1e96cdb0ba7ead6d500ffd331",
+      "sha256": "1f6aba50976491ab792f1ed027677eb6be97c3f3e97b726d9ea402b6ad18c151"
+    },
+    {
+      "path": "scripts/production-server.js",
+      "git_blob": "5be703de6ae82c4bbd3b6d0ba76c27b1e53f8275",
+      "sha256": "f2143d1f9699127405cf18f125308e970d10aa65e34e152e06ab1dc608e7337f"
+    },
+    {
+      "path": "scripts/verify-demo.js",
+      "git_blob": "7cbec8eef18648b6610ebaaf4e5f31f44286ccad",
+      "sha256": "b6e4ab0e89c110a4afa80b6e1a00436c5c719e94e4bb5218fb7f6b3dfb8d3b3a"
+    },
+    {
+      "path": "setupTests.js",
+      "git_blob": "8f2609b7b3e0e3897ab3bcaad13caf6876e48699",
+      "sha256": "22583759d0045fdf8d62c9db0aacba9fd8bddde79c671aa08c97dcfd4e930cc6"
+    },
+    {
+      "path": "src/App.css",
+      "git_blob": "a4554eeab50be112319777d52d5a2a9ed68bfac1",
+      "sha256": "683a187c493f6fe06d56e0c6f620a26167fa52a91d7f303938db14f84f9ab9df"
+    },
+    {
+      "path": "src/App.js",
+      "git_blob": "0ba6fd5bff5776acee7b3daee44039d3b24a66ee",
+      "sha256": "cf72d392ca75ca98ea8a629708f0e6304e14deda6f6793bb6030b5afc65c1821"
+    },
+    {
+      "path": "src/App.test.js",
+      "git_blob": "de79dbca7fc34bc769bc0302cbbdada40b8ec95b",
+      "sha256": "c83af7f98ba47a6b1ff07121f28cc87b0fc1c04957e0cbcfeb81751fcaaa24b2"
+    },
+    {
+      "path": "src/ModernPages.css",
+      "git_blob": "8d10ea2cefc515b2482308cdb8086db045d01b85",
+      "sha256": "7012048a25dec47415c9ade6404a4042b0fcae22b4acba052b12cac79e6c76b7"
+    },
+    {
+      "path": "src/index.css",
+      "git_blob": "ec2585e8c0bb8188184ed1e0703c4c8f2a8419b0",
+      "sha256": "daf22c296c801d3d533083361cc59fbdc22e5bfe528aa4bad1973b54cc5448a4"
+    },
+    {
+      "path": "src/index.js",
+      "git_blob": "2cb1087e76eb7b33e49ace3622c9e108cd1ed64c",
+      "sha256": "eadee16a69ff4b3d0694a1f5a54268c39c26627e3e8a70240e19254281f798f2"
+    },
+    {
+      "path": "src/logo.svg",
+      "git_blob": "9dfc1c058cebbef8b891c5062be6f31033d7d186",
+      "sha256": "6000b0e9b0b05b3f112de04f0d039768a1db63588ff9b6ef7099dbd71632f383"
+    },
+    {
+      "path": "src/pages/BayesianCNNPage.js",
+      "git_blob": "8b3cbcbfa6cadc16b3f95711ff345ad9cf28e8d8",
+      "sha256": "30d5b9237dcc22b61706825914d41977af886de410689c1af16f1c5f2ba252ab"
+    },
+    {
+      "path": "src/pages/HomePage.css",
+      "git_blob": "5e6441521e232a0eba56029b9a5f78cf11106ca1",
+      "sha256": "81d45d51a05f6034d769c44302f2eda7474ee28edf94aca33a6ff93789fa165f"
+    },
+    {
+      "path": "src/pages/HomePage.js",
+      "git_blob": "b7253150d48d466067c79367f4dcd42ac86b8ae9",
+      "sha256": "f611fca850dade8b2734d6478a368d31a48438033e9d1db96ce5b90b57b453f7"
+    },
+    {
+      "path": "src/pages/MastersThesisPage.js",
+      "git_blob": "d3ec9d31753bb6be08b1affb0eeb83986ff38a8b",
+      "sha256": "d33e4ddab72251494f5d4fa1a4f41a1917c322eaa4a28aa34ee40a830e458b01"
+    },
+    {
+      "path": "src/pages/ModernPages.css",
+      "git_blob": "af70b0266ec60c44e043238d1d7e1988282e86fb",
+      "sha256": "edd7d3a3b7c812c54bc9d67c22bf826867970b1c57412e355ff722ef70da7fd3"
+    },
+    {
+      "path": "src/pages/NLPPage.js",
+      "git_blob": "fe093e83b9a2410059b8699c630b72be8b109f9e",
+      "sha256": "b4981b36ba986e890ff487334285f42bd98bab2ebbeb7156d86702ef8cf6fb2d"
+    },
+    {
+      "path": "src/pages/PredictiveStochasticPage.js",
+      "git_blob": "1da149dc82daac6f50981fa230629366eb426c00",
+      "sha256": "6e8da159055fec1045c7ba0f2ed5c7b5dffa57f326bafa8ce3c09f66a06886bb"
+    },
+    {
+      "path": "src/pages/SolanaToolsPage.js",
+      "git_blob": "af13233901b5e79197bb8bff4d811756a8fe77ea",
+      "sha256": "83946cf42987e1235ab29e31b38d15861d4ed70a1efeb678c0b8a94a231db8c5"
+    },
+    {
+      "path": "src/pages/blank",
+      "git_blob": "8b137891791fe96927ad78e64b0aad7bded08bdc",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "src/reportWebVitals.js",
+      "git_blob": "5253d3ad9e6be6690549cb255f5952337b02401d",
+      "sha256": "714851669856152806c289f9aac6240b414bbac50c60ee4f7e6247f31eac0c1c"
+    },
+    {
+      "path": "src/setupTests.js",
+      "git_blob": "7c543b734735967440d427aa93550ab6e03a249f",
+      "sha256": "08bcad2b17d851f559d9df8e3d55acaa9a78c9493ddaecd27d3e02ff7634e80d"
+    }
+  ]
+}
