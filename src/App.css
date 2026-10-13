@@ -1,231 +1,54 @@
-/* Global Styles */
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: 'Inter', sans-serif;
-  background: #111;  /* Dark background */
-  color: #e0e0e0;
-  scroll-behavior: smooth;
+:root {
+  --canvas: #0b1220;
+  --panel: #142135;
+  --ink: #f2f6fb;
+  --muted: #b6c5d8;
+  --accent: #81dfcb;
+  --line: #2e4159;
 }
-
-.app-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background: #111;
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--canvas); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+body { -webkit-font-smoothing: antialiased; }
+.app-container { display: flex; flex-direction: column; min-height: 100vh; }
+.header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; width: min(100% - 64px, 1120px); margin: 0 auto; padding: 32px 0 0; }
+.logo { display: flex; align-items: center; gap: 18px; min-width: 0; }
+.avatar { display: block; width: 64px; height: 64px; flex: 0 0 64px; object-fit: cover; border-radius: 20px; border: 1px solid var(--line); }
+.avatar-fallback { display: flex; align-items: center; justify-content: center; background: var(--panel); color: var(--accent); font-size: 1.4rem; font-weight: 600; }
+.archive-label { margin: 0 0 5px; color: var(--accent); font-size: .68rem; font-weight: 650; letter-spacing: .14em; text-transform: uppercase; }
+.header h1 { margin: 0; font-size: 1.45rem; letter-spacing: -.03em; line-height: 1.2; }
+.header h2 { margin: 6px 0 0; font-size: .8rem; font-weight: 400; line-height: 1.4; color: var(--muted); }
+.profile-links { display: flex; align-items: center; gap: 8px; }
+.profile-links a { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 12px; color: var(--muted); transition: background .2s, color .2s; }
+.profile-links a:hover { color: var(--ink); background: var(--panel); }
+.profile-icon { font-size: 1.1rem; }
+.navbar { width: 100%; padding: 18px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.menu { display: flex; flex-wrap: wrap; list-style: none; gap: 6px; padding: 0; margin: 0; }
+.menu li { min-width: 0; }
+.menu li a { display: block; padding: 10px 14px; color: var(--muted); border-radius: 9px; font-size: .82rem; font-weight: 550; text-decoration: none; transition: color .2s, background .2s; }
+.menu li a:hover { color: var(--ink); background: var(--panel); }
+.menu li a.active { color: var(--canvas); background: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.skip-link { position: absolute; left: 24px; top: -80px; z-index: 10; padding: 12px 16px; border-radius: 8px; background: var(--accent); color: var(--canvas); }
+.skip-link:focus { top: 12px; }
+.content { flex: 1; width: min(100% - 64px, 1120px); min-width: 0; margin: 0 auto; padding: 36px 0 64px; }
+.content:focus { outline: none; }
+.content .page-container, .content .homepage-container, .page-container .section { width: 100%; max-width: 100%; min-width: 0; overflow-wrap: anywhere; }
+.content pre { max-width: 100%; min-width: 0; overflow-x: auto; }
+.footer { width: min(100% - 64px, 1120px); margin: 0 auto; padding: 24px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .75rem; }
+.footer p { margin: 0; }
+@media (max-width: 640px) {
+  .header, .content, .footer { width: calc(100% - 32px); }
+  .header { padding-top: 24px; gap: 20px; }
+  .logo { gap: 12px; }
+  .avatar { width: 48px; height: 48px; flex-basis: 48px; border-radius: 15px; }
+  .header h1 { font-size: 1.25rem; }
+  .header h2 { max-width: 230px; font-size: .75rem; }
+  .archive-label { font-size: .61rem; }
+  .profile-links { gap: 7px; }
+  .profile-links a { width: 36px; height: 36px; }
+  .navbar { padding: 12px 0; }
+  .menu { gap: 4px; }
+  .menu li a { padding: 10px 11px; font-size: .78rem; }
+  .content { padding: 24px 0 40px; }
 }
-
-/* Combined Header (Logo, Profile Links, Navbar) */
-.header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #1a1a1a;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.8);
-  z-index: 1100;
-  padding: 1rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Logo Section */
-.logo {
-  text-align: center;
-  margin-bottom: 0.5rem;
-}
-
-.avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 4px solid #6366f1; /* You can change this to a pink if desired */
-  margin-bottom: 1rem;
-}
-
-.header h1 {
-  margin: 0.5rem 0;
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #e0e0e0;
-}
-
-.header h2 {
-  margin: 0.25rem 0 1rem;
-  font-size: 1.5rem;
-  color: #aaa;
-}
-
-/* Profile Links */
-.profile-links {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.profile-links a {
-  text-decoration: none;
-  color: #aaa;
-  transition: transform 0.3s, color 0.3s;
-}
-
-.profile-links a:hover {
-  color: #ff49db;  /* Vibrant pink on hover */
-  transform: scale(1.1);
-}
-
-.profile-icon {
-  font-size: 1.8rem;
-}
-
-/* Navbar */
-.navbar {
-  width: 100%;
-  background: #1a1a1a;
-  border-top: 1px solid #333;
-  padding: 0.75rem 0; /* Increased padding for bigger buttons */
-  /* No additional position here since header covers it */
-}
-
-.nav-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0.5rem;
-  display: flex;
-  justify-content: center;
-}
-
-.menu {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
-  padding: 0;
-  margin: 0;
-  justify-content: center;
-}
-
-.menu li a {
-  text-decoration: none;
-  color: #aaa;
-  font-weight: 600;
-  padding: 1rem 1.5rem;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  transition: background 0.3s, color 0.3s, transform 0.3s;
-}
-
-.menu li a:hover,
-.menu li a:focus,
-.menu li.active a {
-  background: #ff49db; /* Bright pink for hover */
-  color: #ffffff;
-  transform: scale(1.05);
-}
-
-/* Main Content */
-.content {
-  margin-top: 320px;  /* Adjust this value to match the total height of your fixed header */
-  flex: 1;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 1rem;
-  background: #111;
-}
-
-/* Section Styles */
-.section {
-  margin-bottom: 2rem;
-}
-
-.section h2 {
-  margin-bottom: 0.75rem;
-  border-bottom: 2px solid #333;
-  padding-bottom: 0.5rem;
-  color: #ffffff;
-}
-
-/* Footer */
-.footer {
-  background: #1a1a1a;
-  border-top: 1px solid #333;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-  color: #777;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .menu {
-    flex-direction: column;
-    align-items: center;
-  }
-  .content {
-    margin-top: 400px;  /* Increase offset for smaller screens if header stacks */
-    padding: 1rem;
-  }
-}
-/* Keep padded research panels and code samples within the viewport. */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-.app-container .content {
-  width: 100%;
-  min-width: 0;
-}
-.content .page-container,
-.content .homepage-container,
-.page-container .section {
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-  overflow-wrap: anywhere;
-}
-.content pre {
-  max-width: 100%;
-  min-width: 0;
-  overflow-x: auto;
-}
-@media (max-width: 768px) {
-  .app-container .header {
-    position: static;
-  }
-  .app-container .content {
-    margin-top: 0;
-  }
-  .app-container .menu {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  .app-container .menu a {
-    padding: 0.65rem;
-  }
-  .header .avatar {
-    width: 72px;
-    height: 72px;
-  }
-  .header h1 {
-    font-size: 1.75rem;
-  }
-  .header h2 {
-    font-size: 1rem;
-  }
-  .page-container .section-title {
-    font-size: 1.5rem;
-  }
-  .content .page-container,
-  .page-container .section {
-    padding: 1rem;
-  }
-}
-
-.avatar-fallback {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: #29263c;
-  color: #fff;
-  font-size: 2rem;
-}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }

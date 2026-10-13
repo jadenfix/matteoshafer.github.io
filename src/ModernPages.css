@@ -1,77 +1,17 @@
-/* ModernPages.css - Modern Dark Theme with Vibrant Accents and Animations */
-
-.page-container {
-    padding: 4rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: #111;  /* Dark base */
-    color: #e0e0e0;
-    font-family: 'Inter', sans-serif;
-    animation: fadeIn 1.2s ease-out forwards;
-  }
-  
-  .section {
-    margin-bottom: 3rem;
-    padding: 2rem;
-    background-color: #1a1a1a;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease;
-  }
-  
-  .section:hover {
-    transform: translateY(-5px);
-  }
-  
-  .section-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    color: #ff49db; /* Accent: vibrant pink */
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  
-  .section-subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    color: #2e91ff; /* Accent: vibrant blue */
-  }
-  
-  .section-content {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-  }
-  
-  a {
-    color: #2e91ff;
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
-  
-  a:hover {
-    color: #ff49db;
-    transform: translateY(-2px);
-  }
-  
-  pre {
-    background-color: #1a1a1a;
-    padding: 1rem;
-    border-radius: 8px;
-    overflow-x: auto;
-    color: #e0e0e0;
-    font-size: 0.9rem;
-  }
-  
-  /* Keyframe animation for page load */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+.page-container { color: var(--ink); }
+.section { margin-bottom: 24px; padding: 40px; border: 1px solid var(--line); border-radius: 20px; background: var(--panel); }
+.section-title { max-width: 28ch; margin: 0 0 24px; color: var(--ink); font-size: clamp(1.6rem, 3.4vw, 2.5rem); line-height: 1.2; font-weight: 600; letter-spacing: -.03em; text-wrap: balance; }
+.section-subtitle { margin: 32px 0 16px; color: var(--accent); font-size: 1.15rem; font-weight: 600; line-height: 1.4; }
+.section-content { margin: 0 0 20px; color: var(--muted); font-size: 1rem; line-height: 1.8; }
+.section-content li + li { margin-top: 7px; }
+.section-content strong { color: var(--ink); font-weight: 600; }
+a { color: var(--accent); text-decoration: none; text-underline-offset: 4px; }
+a:hover { color: #b4f0e3; }
+.section a { text-decoration: underline; }
+pre { margin: 20px 0 28px; padding: 24px; border: 1px solid var(--line); border-radius: 12px; background: var(--canvas); color: var(--muted); font-size: .85rem; line-height: 1.7; }
+@media (max-width: 640px) {
+  .section { padding: 28px 24px; }
+  .section-content { font-size: .95rem; }
+  .section-content:is(ul, ol) { padding-left: 22px; }
+  pre { padding: 16px; font-size: .75rem; }
+}
