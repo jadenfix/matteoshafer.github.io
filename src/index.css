@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Keep archived code examples and padded panels inside small viewports. */
+*, *::before, *::after { box-sizing: border-box; }
+.content, .page-container, .homepage-container, .section {
+  min-width: 0;
+  max-width: 100%;
+}
+.content { overflow-wrap: anywhere; }
+pre { max-width: 100%; overflow-x: auto; }
+@media (max-width: 600px) {
+  .content, .page-container, .homepage-container { width: 100%; }
+  .section { padding: 1rem; }
+}
