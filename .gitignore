@@ -1,4 +1,7 @@
 node_modules/
 build/
+test-results/
+playwright-report/
+artifacts/demo/raw/
 __pycache__/
 *.pyc

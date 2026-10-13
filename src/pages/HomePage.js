@@ -1,6 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import "./HomePage.css";
+
+const projects = [
+  ["Master's thesis", "/masters-thesis", "An in-progress research proposal spanning forecasting, stochastic modeling, and market complexity."],
+  ["Predictive stochastic", "/predictive-stochastic", "A historical thesis archive with linked paper, R code, and dataset references."],
+  ["Solana tools", "/solana-tools", "An archival description of related trading and portfolio experiments."],
+  ["NLP", "/nlp", "A statistical n-gram language-model project with smoothing and perplexity evaluation."],
+  ["Bayesian CNN", "/bayesian-cnn", "A CIFAR-10 experiment description focused on uncertainty estimation."],
+];
 
 function HomePage() {
   return (
@@ -36,6 +45,25 @@ function HomePage() {
           </a>
         </div>
       </motion.div>
+
+      <section className="project-index" aria-labelledby="project-index-title">
+        <div className="project-index-heading">
+          <p className="eyebrow">Checked-in archive</p>
+          <h2 id="project-index-title">Research project index</h2>
+          <p>Open the five summaries included in this build. Each route stays inside the archive.</p>
+        </div>
+        <ul className="project-grid">
+          {projects.map(([title, route, description]) => (
+            <li key={route}>
+              <Link to={route}>
+                <span>{title}</span>
+                <small>{description}</small>
+                <b aria-hidden="true">Open summary →</b>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
 
       {/* About Me Section */}
       <motion.div 
